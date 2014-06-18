@@ -7,19 +7,67 @@ html(class='no-js')
     title
  
     meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
- 
-    link(rel='stylesheet', href='/css/boostrap.min.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1; minimal-ui')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='yes')
+
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
     script(src='http://localhost:3000/socket.io/socket.io.js')
-    script(src='/js/boostrap.min.js')
+    script(src='http://code.jquery.com/jquery.js')
+    //script(src='/js/jquery-ui.min.js')
+    //script(src='/js/jquery.ui.touch-punch.min.js')
+    //script(src='/js/interact.min.js')
+    script(src='/js/bootstrap.min.js')
     script(src='/js/script.js')
  
   body
-    h1#title bienvenu #{name}
+    h1#title.text-important bienvenu #{name}
+    
+    //select life instant
+    div#wrapper-life
+      ul.row
+        li.col-sm-3
+          a(href="#", data-personna="#") instant de vie
+        li.col-sm-3
+          a(href="#", data-personna="#") instant de vie
+        li.col-sm-3
+          a(href="#", data-personna="#") instant de vie
+        li.col-sm-3
+          a(href="#", data-personna="#") instant de vie
+
+    // select shop screen
     div#wrapper
-      div.shop
+      div.shop.row
         div.col-sm-8
-          p.choose-shop Sélectionner vos enseignes
-        div.col-sm-4
-          p.download Télécharger votre parcours
+          p.text-important.choose-shop Sélectionner vos enseignes
+          ul.row.list-shop
+            li.col-sm-4(data-shop='shop1')
+              img(src='/img/shop/shop-1.jpg')
+              img.star(src='/img/star.png')
+            li.col-sm-4(data-shop='shop2')
+              img(src='/img/shop/shop-1.jpg')
+            li.col-sm-4(data-shop='shop3')
+              img(src='/img/shop/shop-1.jpg')
+            li.col-sm-4(data-shop='shop4')
+              img(src='/img/shop/shop-1.jpg')
+            li.col-sm-4(data-shop='shop5')
+              img(src='/img/shop/shop-1.jpg')
+            li.col-sm-4(data-shop='shop6')
+              img(src='/img/shop/shop-1.jpg')
+            li.col-sm-4(data-shop='shop7')
+              img(src='/img/shop/shop-1.jpg')
+            li.col-sm-4(data-shop='shop8')
+              img(src='/img/shop/shop-1.jpg')
+            li.col-sm-4(data-shop='shop9')
+              img(src='/img/shop/shop-1.jpg')
+        div.col-sm-3.col-sm-offset-1
+          p.text-important.download Télécharger votre parcours
+          div.phone-wrapper
+            img(src='/img/bg-phone.png')
+            div.selected
+            img(src='/img/phone.png')
+      div.desc.row
+        div.col-sm-9
+        div.col-sm-3
+          p.text-important.black Conseils shopping :

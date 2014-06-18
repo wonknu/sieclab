@@ -9,7 +9,6 @@ var App = {
 		{
 			title.classList.add('fade');
 			wrapper.style.display = 'block';
-
 		}, 20);
 
 	}
