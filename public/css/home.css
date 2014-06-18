@@ -40,6 +40,11 @@ body{
 #login-home {
 	display: none;
 }
+#list-brands-page{
+}
+#receive-shop-page {
+	display: none;
+}
 
 .brands {
 	padding: 0;
@@ -47,4 +52,29 @@ body{
 
 .open-slide {
 	display: none;
+}
+
+#list-footer {
+	position: fixed;
+	bottom: 0;
+}
+
+#infos-brands {
+	background: url("/img/bg-brands-list.png") no-repeat 0 0 transparent;
+	background-size:100% auto;
+	height: 448px;
+	text-align: center;
+    padding-top: 40px;
+}
+
+.check-in-text {
+	padding-top: 10px;
+}
+
+.check-in-no {
+	padding-top: 40px;
+	display: none;
+}
+.brands-promo-img {
+	opacity: 0.3;
 }

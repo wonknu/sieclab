@@ -7,11 +7,13 @@ html(class='no-js')
     title
  
     meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1; minimal-ui')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='yes')
  
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/home.css')
-    script(src='http://localhost:3000/socket.io/socket.io.js')
+    script(src='http://192.168.1.16:3000/socket.io/socket.io.js')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.min.js')
     script(src='/js/home.js')
@@ -24,28 +26,39 @@ html(class='no-js')
           img(src= "/img/portrait-login.png")
         p.synchronize.col-xs-12 Synchronisation
         p.age.col-xs-4.col-xs-offset-4 34 ans
-    div#list-brands
-      div#zara.brands.col-xs-12
-        img(src= "/img/zara.png")
-        p.open-slide Test Toggle
-      div#celio.brands.col-xs-12
-        img(src= "/img/celio.png")
-        p.open-slide Test Toggle
-      div#hm.brands.col-xs-12
-        img(src= "/img/hm.png")
-        p.open-slide Test Toggle
-      div#kookai.brands.col-xs-12
-        img(src= "/img/kookai.png")
-        p.open-slide Test Toggle
-      div#lecop.brands.col-xs-12
-        img(src= "/img/lecoq.png")
-        p.open-slide Test Toggle
-      div#lifewear.brands.col-xs-12
-        img(src= "/img/lifewear.png")
-        p.open-slide Test Toggle
-      div#swatch.brands.col-xs-12
-        img(src= "/img/swatch.png")
-        p.open-slide Test Toggle
-      div#thomassabo.brands.col-xs-12
-        img(src= "/img/thomassabo.png")
-        p.open-slide Test Toggle
+    div#receive-shop-page
+      div.btn-data Send
+    div#list-brands-page
+      div#list-brands
+        div#zara.brands.col-xs-12
+          img(src= "/img/zara.png")
+          div#infos-brands.open-slide.col-xs-12
+            div.promo-text
+              img.brands-promo-img(src= "/img/bg-brands-promo.png")
+              p.check-in-text Check In dans ce magasin pour bénéficier des promotions !
+            div.first-check-in
+              img.check-in-no.col-xs-12(src= "/img/check-in-no.png")
+        div#celio.brands.col-xs-12
+          img(src= "/img/celio.png")
+          p.open-slide Test Toggle
+        div#hm.brands.col-xs-12
+          img(src= "/img/hm.png")
+          p.open-slide Test Toggle
+        div#kookai.brands.col-xs-12
+          img(src= "/img/kookai.png")
+          p.open-slide Test Toggle
+        div#lecop.brands.col-xs-12
+          img(src= "/img/lecoq.png")
+          p.open-slide Test Toggle
+        div#lifewear.brands.col-xs-12
+          img(src= "/img/lifewear.png")
+          p.open-slide Test Toggle
+        div#swatch.brands.col-xs-12
+          img(src= "/img/swatch.png")
+          p.open-slide Test Toggle
+        div#thomassabo.brands.col-xs-12
+          img(src= "/img/thomassabo.png")
+          p.open-slide Test Toggle
+      div#list-footer
+        img(src= "/img/footer-list.png")
+        img(src= "/img/footer-map.png")

@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var users = [];
 
 server.listen(3000);
 
@@ -22,7 +23,15 @@ app.get('/index/:name', function(req, res){
 
 io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
-  socket.on('test', function (data) {
-    console.log(data);
+  socket.on('btn-data', function (data) {
+  	console.log('btn-data');
+  	socket.broadcast.emit('get_data');
+  });
+  socket.on('send_shop', function (data) {
+  	socket.broadcast.emit('receive_shop');
+  });
+  socket.on('disconnect', function () {
+    io.sockets.emit('user disconnected');
   });
 });
+
