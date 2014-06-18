@@ -10,6 +10,10 @@ body{
 }
 
 body{
+	background: url("/img/bg-shop.jpg") no-repeat 0 0 transparent;
+	background-size:100% auto; 
+}
+body.select{
 	background: url("/img/bg.jpg") no-repeat 0 0 transparent;
 	background-size:100% auto; 
 }
@@ -55,9 +59,30 @@ body{
 	margin-top:10%;
 }
 
+#wrapper-life li{
+	padding: 40px 25px;
+}
+
+#wrapper-life li.clearfix{
+	clear:both;
+	padding:0;
+}
+
+#wrapper-life div{
+	width: 100%;
+	padding: 0 25px;
+}
+
 #wrapper-life a{
 	color:#FFF;
 	text-decoration:none;
+	width: 80%;
+}
+#wrapper-life span{
+	background: url('/img/sprite-icon.jpg') no-repeat 0 50% transparent;
+	display:inline-block;
+	width:26px;
+	height:100%;
 }
 
 ul,
@@ -86,12 +111,14 @@ li.draggable .star{
 	right:3px;
 }
 /* text */
-.text-important{
+
+body.select .text-important{
 	color: #FFF;
 	font-size: 24px;
 	text-shadow: 1px 1px 1px #000;
 	text-align: center;
 }
+.text-important,
 .text-important.black{
 	color: #000;
 	text-shadow: 1px 1px 1px #FFF;
@@ -122,4 +149,68 @@ li.draggable .star{
 	padding:15px;
 	color: #FFF;
 	border-bottom:1px solid #FFF; 
+}
+
+/* Button*/
+
+.turquoise,
+.orange,
+.green,
+.pink,
+.violet,
+.bleu{
+	display:table;
+	height:54px;
+	font-size:14px;
+	text-transform:uppercase;
+}
+.turquoise a,
+.orange a,
+.green a,
+.pink a,
+.violet a,
+.bleu a{
+	width:100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.turquoise{
+	background: #20b8af;
+	border-bottom:6px solid #16807a;
+}
+.orange{
+	background: #fd9c1f;
+	border-bottom:6px solid #b16d16;
+}
+.green{
+	background: #60d12f;
+	border-bottom:6px solid #439221;
+}
+.pink{
+	background: #ff6766;
+	border-bottom:6px solid #ff4847;
+}
+.violet{
+	background: #e866fb;
+	border-bottom:6px solid #a247af;
+}
+.bleu{
+	background: #6144f7;
+	border-bottom:6px solid #442fac;
+}
+
+#wrapper-life .orange span{
+	background-position: -26px 50%;
+}
+#wrapper-life .green span{
+	background-position: -52px 50%;
+}
+#wrapper-life .pink span{
+	background-position: -78px 50%;
+}
+#wrapper-life .violet span{
+	background-position: -104px 50%;
+}
+#wrapper-life .bleu span{
+	background-position: -130px 50%;
 }

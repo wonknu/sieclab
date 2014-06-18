@@ -36,6 +36,7 @@ var App = {
 	shop: function()
 	{
 		var wrapper = document.getElementById('wrapper');
+		document.body.classList.add('select');
 		wrapper.style.display = 'block';
 		$('body').on('touchstart', '.shop li', function(e){
 			var el = $("<li>" + $(this).html() + "</li>");
