@@ -9,10 +9,43 @@ html(class='no-js')
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
  
-    //link(rel='stylesheet', href='css/normalize.css')
-    //link(rel='stylesheet', href='css/main.css')
-    script(src='/socket.io/socket.io.js')
-    script(src='/client.js')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/home.css')
+    script(src='http://localhost:3000/socket.io/socket.io.js')
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/home.js')
  
   body
-    h1 #{name}
+    div#login-home
+      div#wrapper
+        p.name.col-xs-12 Michel Massart
+        div#header-image.col-xs-12
+          img(src= "/img/portrait-login.png")
+        p.synchronize.col-xs-12 Synchronisation
+        p.age.col-xs-4.col-xs-offset-4 34 ans
+    div#list-brands
+      div#zara.brands.col-xs-12
+        img(src= "/img/zara.png")
+        p.open-slide Test Toggle
+      div#celio.brands.col-xs-12
+        img(src= "/img/celio.png")
+        p.open-slide Test Toggle
+      div#hm.brands.col-xs-12
+        img(src= "/img/hm.png")
+        p.open-slide Test Toggle
+      div#kookai.brands.col-xs-12
+        img(src= "/img/kookai.png")
+        p.open-slide Test Toggle
+      div#lecop.brands.col-xs-12
+        img(src= "/img/lecoq.png")
+        p.open-slide Test Toggle
+      div#lifewear.brands.col-xs-12
+        img(src= "/img/lifewear.png")
+        p.open-slide Test Toggle
+      div#swatch.brands.col-xs-12
+        img(src= "/img/swatch.png")
+        p.open-slide Test Toggle
+      div#thomassabo.brands.col-xs-12
+        img(src= "/img/thomassabo.png")
+        p.open-slide Test Toggle
