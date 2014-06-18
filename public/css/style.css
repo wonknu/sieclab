@@ -1,0 +1,20 @@
+body{
+	background: url("/img/bg.jpg") no-repeat 0 0 transparent;
+	background-size:100% auto; 
+}
+#title{
+	-webkit-transition: all 2s ease-in-out;
+	-moz-transition: all 2s ease-in-out;
+	-ms-transition: all 2s ease-in-out;
+	-o-transition: all 2s ease-in-out;
+	transition: all 2s ease-in-out;
+	opacity:1;
+}
+#title.fade{
+	opacity:0;
+}
+
+/* wrapper */
+#wrapper{
+	display:none;
+}

@@ -16,6 +16,10 @@ app.get('/home/:name', function(req, res){
   res.render('home', {name: req.params.name});
 });
 
+app.get('/index/:name', function(req, res){
+  res.render('index', {name: req.params.name});
+});
+
 io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
   socket.on('test', function (data) {
