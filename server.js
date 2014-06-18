@@ -4,14 +4,16 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+server.listen(3000);
+
 app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
 
 app.set('views', __dirname + '/view');
 app.set('view engine', 'jade');
 
-app.get('/index/:name', function(req, res){
-  res.render('index', {name: req.params.name});
+app.get('/home/:name', function(req, res){
+  res.render('home', {name: req.params.name});
 });
 
 io.on('connection', function (socket) {
@@ -20,5 +22,3 @@ io.on('connection', function (socket) {
     console.log(data);
   });
 });
-
-app.listen(3000);
