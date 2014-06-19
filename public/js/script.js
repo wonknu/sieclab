@@ -83,7 +83,7 @@ document.addEventListener('touchmove', function(e) {
 	e.preventDefault();
 }, false);
 */
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('http://192.168.1.9:3000');
 socket.on('get_data', function (data) {
 	console.log('Here');
 	document.querySelector('.selected').classList.add('move');
