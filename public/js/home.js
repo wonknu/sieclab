@@ -1,10 +1,10 @@
 $( document ).ready(function() {
 
-	setTimeout(function() {
+	$('.login-connect').on('click', function() {
 		$('#login-home').css('display', 'none');
 		$('#receive-shop-page').css('display', 'block');
 		$('#list-brands-page').css('display', 'block');
-	}, 6000)
+	});
 
 	var socket = io.connect(IP + ':3000');
 	socket.on('receive_shop', function (data) {
