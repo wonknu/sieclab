@@ -22,7 +22,9 @@ html(class='no-js')
     script(src='/js/script.js')
  
   body
-    h1#title.text-important bienvenu #{name}
+    h1#title.text-important
+      img(src='/img/portrait-login.png')
+      span bienvenue #{name}
     
     //select life instant
     div#wrapper-life
@@ -120,6 +122,45 @@ html(class='no-js')
             span
             a(href="#", data-personna="#") example
 
+        li.col-sm-4
+          div.violet
+            span
+            a(href="#", data-personna="#") example
+        li.col-sm-4
+          div.bleu
+            span
+            a(href="#", data-personna="#") example
+        li.col-sm-4
+          div.bleu
+            span
+            a(href="#", data-personna="#") example
+
+        li.col-sm-4
+          div.violet
+            span
+            a(href="#", data-personna="#") example
+        li.col-sm-4
+          div.bleu
+            span
+            a(href="#", data-personna="#") example
+        li.col-sm-4
+          div.bleu
+            span
+            a(href="#", data-personna="#") example
+
+        li.col-sm-4
+          div.violet
+            span
+            a(href="#", data-personna="#") example
+        li.col-sm-4
+          div.bleu
+            span
+            a(href="#", data-personna="#") example
+        li.col-sm-4
+          div.bleu
+            span
+            a(href="#", data-personna="#") example
+
         li.clearfix
 
     // select shop screen
@@ -128,32 +169,33 @@ html(class='no-js')
         div.col-sm-8
           p.text-important.choose-shop Sélectionner vos enseignes
           ul.row.list-shop
-            li.col-sm-4(data-shop='shop1')
+            li.col-sm-4(data-shop='shop1', data-img="/img/kookai.png")
               img(src='/img/shop/shop-1.jpg')
               img.star(src='/img/star.png')
-            li.col-sm-4(data-shop='shop2')
-              img(src='/img/shop/shop-1.jpg')
-            li.col-sm-4(data-shop='shop3')
-              img(src='/img/shop/shop-1.jpg')
-            li.col-sm-4(data-shop='shop4')
-              img(src='/img/shop/shop-1.jpg')
-            li.col-sm-4(data-shop='shop5')
-              img(src='/img/shop/shop-1.jpg')
-            li.col-sm-4(data-shop='shop6')
-              img(src='/img/shop/shop-1.jpg')
-            li.col-sm-4(data-shop='shop7')
-              img(src='/img/shop/shop-1.jpg')
-            li.col-sm-4(data-shop='shop8')
-              img(src='/img/shop/shop-1.jpg')
-            li.col-sm-4(data-shop='shop9')
-              img(src='/img/shop/shop-1.jpg')
-        div.col-sm-3.col-sm-offset-1
+            li.col-sm-4(data-shop='shop2', data-img="/img/lecoq.png")
+              img(src='/img/shop/shop-2.jpg')
+            li.col-sm-4(data-shop='shop3', data-img="/img/lifewear.png")
+              img(src='/img/shop/shop-3.jpg')
+            li.col-sm-4(data-shop='shop4', data-img="/img/hm.png")
+              img(src='/img/shop/shop-4.jpg')
+            li.col-sm-4(data-shop='shop5', data-img="/img/zara.png")
+              img(src='/img/shop/shop-5.jpg')
+            li.col-sm-4(data-shop='shop6', data-img="/img/kookai.png")
+              img(src='/img/shop/shop-6.jpg')
+            li.col-sm-4(data-shop='shop7', data-img="/img/thomassabo.png")
+              img(src='/img/shop/shop-7.jpg')
+            li.col-sm-4(data-shop='shop8', data-img="/img/swatch.png")
+              img(src='/img/shop/shop-8.jpg')
+            li.col-sm-4(data-shop='shop9', data-img="/img/celio.png")
+              img(src='/img/shop/shop-9.jpg')
+        div.col-sm-3.phone
           p.text-important.download Télécharger votre parcours
           div.phone-wrapper
             img(src='/img/bg-phone.png')
-            div.selected
+            div.selected-wrapper
+              div.selected
             img(src='/img/phone.png')
       div.desc.row
-        div.col-sm-9
+        div.col-sm-8
         div.col-sm-3
           p.text-important.black Conseils shopping :

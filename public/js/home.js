@@ -1,12 +1,12 @@
 $( document ).ready(function() {
 
 
-	var socket = io.connect('http://192.168.1.16:3000');
+	var socket = io.connect('http://192.168.1.9:3000');
 	socket.on('receive_shop', function (data) {
 	    console.log('animation');
 	});
-	$('.btn-data').on('click', function() {
-	    socket.emit('btn-data');	
+	$('.btn-data').on('touchend', function() {
+	    socket.emit('btn-data');
 	})	
     $(".brands").on('touchend', function(e) {
     	console.log('Here');

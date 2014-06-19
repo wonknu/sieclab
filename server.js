@@ -22,10 +22,10 @@ app.get('/index/:name', function(req, res){
 });
 
 io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
+  console.log('connection');
   socket.on('btn-data', function (data) {
   	console.log('btn-data');
-  	socket.broadcast.emit('get_data');
+  	io.sockets.emit('get_data');
   });
   socket.on('send_shop', function (data) {
   	socket.broadcast.emit('receive_shop');

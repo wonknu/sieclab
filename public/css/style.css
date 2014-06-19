@@ -36,19 +36,26 @@ body.select{
 	margin: 0;
 	opacity:1;
 }
+#title img{
+	width: 100px;
+}
 #title.up{
 	-moz-transform: translate3d(0, 0, 0);
 	-webkit-transform: translate3d(0, 0, 0);
 	-o-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
-	padding-top: 5%;
 }
 #title.fade{
 	opacity:0;
 }
 
 /* wrapper */
+#wrapper-life ul{
+	height: 665px;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch
+}
 #wrapper-life ul,
 #wrapper-life ,
 #wrapper{
@@ -121,34 +128,67 @@ body.select .text-important{
 .text-important,
 .text-important.black{
 	color: #000;
-	text-shadow: 1px 1px 1px #FFF;
+	text-shadow: 1px 1px 1px #000;
 }
 
 /* phone */
+.phone{
+	padding-left: 50px;
+}
 .phone-wrapper{
 	position: relative;
 }
 .phone-wrapper img{
 	position: absolute;
+	z-index: 1200;
 }
 .phone-wrapper img:first-child{
 	z-index: 50;
 }
-.selected{
+.selected-wrapper{
 	position: absolute;
 	height: 306px;
 	width: 180px;
 	left: 13px;
 	top: 57px;
 	overflow-x:hidden;
-	overflow-y:scroll;
 	z-index: 500;
-	-webkit-overflow-scrolling: touch
+}
+.selected{
+	height: 100%;
+	width: 100%;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	-webkit-overflow-scrolling: touch;
+
+	-webkit-transition: all 250ms ease-out;
+	-moz-transition: all 250ms ease-out;
+	-ms-transition: all 250ms ease-out;
+	-o-transition: all 250ms ease-out;
+	transition: all 250ms ease-out;
+	-moz-transform: translate3d(0, 0%, 0);
+	-webkit-transform: translate3d(0, 0%, 0);
+	-o-transform: translate3d(0, 0%, 0);
+	-ms-transform: translate3d(0, 0%, 0);
+	transform: translate3d(0, 0%, 0);
+}
+.selected.move{
+	transition: all 1s ease-in-out;
+	-moz-transform: translate3d(0, 100%, 0);
+	-webkit-transform: translate3d(0, 100%, 0);
+	-o-transform: translate3d(0, 100%, 0);
+	-ms-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
 }
 .selected .item{
-	padding:15px;
+	padding:15px 0;
 	color: #FFF;
-	border-bottom:1px solid #FFF; 
+	border-bottom:1px solid #FFF;
+	background: url("/img/bg-brands-list.png") no-repeat 0 0 transparent;
+	background-size: 100% auto;
+}
+.selected .item img{
+	width: 100%;
 }
 
 /* Button*/

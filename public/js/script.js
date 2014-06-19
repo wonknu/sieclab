@@ -13,11 +13,20 @@ var App = {
 
 			setTimeout(function()
 			{
-				title.innerHTML = "Sélectionner votre instant de vie";
+				title.querySelector('span').innerHTML = "Sélectionnez votre instant de vie";
 				title.classList.remove('fade');
 				setTimeout(function()
 				{
 					document.querySelector('#wrapper-life ul').style.display = 'block';
+					$('#wrapper-life ul').animate({  
+					    scrollTop:$('#wrapper-life ul').height()
+					}, 0);
+					setTimeout(function()
+					{
+						$('#wrapper-life ul').animate({  
+						    scrollTop:'0px'
+						}, 250);
+					}, 1);
 				}.bind(this), 1000);
 			}.bind(this), 1000);
 		}.bind(this), 1000);
@@ -41,6 +50,7 @@ var App = {
 		$('body').on('touchstart', '.shop li', function(e){
 			var el = $("<li>" + $(this).html() + "</li>");
 			var dataShop = $(this).attr('data-shop');
+			var dataImg = $(this).attr('data-img');
 			el.css({
 				left: e.originalEvent.touches[0].pageX + "px",
 				top: e.originalEvent.touches[0].pageY + "px"
@@ -59,8 +69,7 @@ var App = {
 			$('body').on('touchend', '.shop li', function(e){
 				$('body').off('touchmove');
 				$('body').off('touchend');
-				console.log(dataShop);
-				$('.selected').append('<div class="item">' + dataShop + '</div>');
+				$('.selected').append('<div class="item"><img src="' + dataImg + '" /></div>');
 				el.remove();
 			});
 		});
@@ -74,3 +83,10 @@ document.addEventListener('touchmove', function(e) {
 	e.preventDefault();
 }, false);
 */
+var socket = io.connect('http://localhost:3000');
+socket.on('get_data', function (data) {
+	console.log('Here');
+	document.querySelector('.selected').classList.add('move');
+	socket.emit('send_shop');
+});
+
