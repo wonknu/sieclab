@@ -138,3 +138,10 @@ html,body {
 	-ms-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
+
+.visible {
+	display: block;
+}
+.hide {
+	display: none;
+}

@@ -30,7 +30,7 @@ html(class='no-js')
     div#receive-shop-page
       div.btn-data.col-xs-6.col-xs-offset-3 Démarrer mon shopping
     div#list-brands-page
-      div#list-brands
+      div#list-brands.visible
         div#zara.brands.col-xs-12
           img(src= "/img/Scieclab_GUI_Phone_List_01.jpg")
           img.star(src= "/img/star-off.png")
@@ -76,6 +76,8 @@ html(class='no-js')
         div#thomassabo.brands.col-xs-12
           img(src= "/img/Scieclab_GUI_Phone_List_08.jpg")
           img.star(src= "/img/star-off.png")
+      div#list-map.hide
+        img(src= "/img/Scieclab_GUI_Phone_Plan.png")
       div#list-footer
-        img(src= "/img/footer-list.png")
-        img(src= "/img/footer-map.png")
+        img.change-list(src= "/img/footer-list.png")
+        img.change-map(src= "/img/footer-map.png")

@@ -47,42 +47,17 @@ $( document ).ready(function() {
   		}, 1000);
   	})
   	});
-});
 
-/*var manifest = [
-		    {src: 'bg-brands-list.png'},
-		    {src: 'bg-brands-promo.png'},
-		    {src: 'bg-login-phone.png'},
-		    {src: 'bg-phone.png'},
-		    {src: 'bg-shop.jpg'},
-		    {src: 'bg.jpg'},
-		    {src: 'Scieclab_GUI_Phone_List_01.jpg'},
-		    {src: 'check-in-no.png'},
-		    {src: 'check-in-yes.png'},
-		    {src: 'clock-icon.png'},
-		    {src: 'footer-list.png'},
-		    {src: 'footer-map.png'},
-		    {src: 'Scieclab_GUI_Phone_List_02.jpg'},
-		    {src: 'Scieclab_GUI_Phone_List_03.jpg'},
-		    {src: 'Scieclab_GUI_Phone_List_04.jpg'},
-		    {src: 'Scieclab_GUI_Phone_List_05.jpg'},
-		    {src: 'phone.png'},
-		    {src: 'portrait-login.png'},
-		    {src: 'sprite-icon.jpg'},
-		    {src: 'star-off.png'},
-		    {src: 'star-on.png'},
-		    {src: 'star.png'},
-		    {src: 'Scieclab_GUI_Phone_List_06.jpg'},
-		    {src: 'Scieclab_GUI_Phone_List_07.jpg'},
-		    {src: 'Scieclab_GUI_Phone_List_08.jpg'},
-		    {src: 'shop/shop-1.jpg'},
-		    {src: 'shop/shop-2.jpg'},
-		    {src: 'shop/shop-3.jpg'},
-		    {src: 'shop/shop-4.jpg'},
-		    {src: 'shop/shop-5.jpg'},
-		    {src: 'shop/shop-6.jpg'},
-		    {src: 'shop/shop-7.jpg'},
-		    {src: 'shop/shop-8.jpg'},
-		    {src: 'shop/shop-9.jpg'},
-		];
-*/
+	$('.change-map').on('click', function(){
+		if($('#list-brands').hasClass('visible')) {
+			$('#list-brands').removeClass('visible').addClass('hide');
+			$('#list-map').removeClass('hide').addClass('visible');
+		}
+	});
+	$('.change-list').on('click', function(){
+		if($('#list-map').hasClass('visible')) {
+			$('#list-map').removeClass('visible').addClass('hide');
+			$('#list-brands').removeClass('hide').addClass('visible');
+		}
+	});
+});
