@@ -13,10 +13,8 @@ html(class='no-js')
 
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
-    script(src='http://192.168.1.9:3000/socket.io/socket.io.js')
-    script(src='http://code.jquery.com/jquery.js')
-    script(src='/js/bootstrap.min.js')
-    script(src='/js/script.js')
+    script(src='/js/config.js')
+    script(src='/js/jquery.js')
  
   body
     h1#title.text-important
@@ -194,5 +192,14 @@ html(class='no-js')
             img(src='/img/phone.png')
       div.desc.row
         div.col-sm-8
+
+          p.text-important.black 
+            img.promo.star(src='/img/star.png')
+            span Promotions du moment :
         div.col-sm-3
           p.text-important.black Conseils shopping :
+
+      script(src='#{ip}:3000/socket.io/socket.io.js')
+      script(src='/js/preloadjs.js')
+      script(src='/js/bootstrap.min.js')
+      script(src='/js/script.js')

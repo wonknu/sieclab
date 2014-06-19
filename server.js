@@ -4,6 +4,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var users = [];
+var IP = require('./public/js/config');
 
 server.listen(3000);
 
@@ -14,11 +15,11 @@ app.set('views', __dirname + '/view');
 app.set('view engine', 'jade');
 
 app.get('/home/:name', function(req, res){
-  res.render('home', {name: req.params.name});
+  res.render('home', {name: req.params.name, ip: IP});
 });
 
 app.get('/index/:name', function(req, res){
-  res.render('index', {name: req.params.name});
+  res.render('index', {name: req.params.name, ip: IP});
 });
 
 io.on('connection', function (socket) {

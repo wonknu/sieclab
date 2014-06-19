@@ -6,7 +6,7 @@ $( document ).ready(function() {
 		$('#list-brands-page').css('display', 'block');
 	}, 6000)
 
-	var socket = io.connect('http://192.168.1.9:3000');
+	var socket = io.connect(IP + ':3000');
 	socket.on('receive_shop', function (data) {
 	    $('#list-brands-page').addClass('move');
 	    $('#receive-shop-page').css('display', 'none');

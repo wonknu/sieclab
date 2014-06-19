@@ -1,5 +1,51 @@
 var App = {
 
+	preload: function ()
+	{
+		var preload = new createjs.LoadQueue(true, '/img/');
+		var manifest = [
+		    {src: 'bg-brands-list.png'},
+		    {src: 'bg-brands-promo.png'},
+		    {src: 'bg-login-phone.png'},
+		    {src: 'bg-phone.png'},
+		    {src: 'bg-shop.jpg'},
+		    {src: 'bg.jpg'},
+		    {src: 'celio.png'},
+		    {src: 'check-in-no.png'},
+		    {src: 'check-in-yes.png'},
+		    {src: 'clock-icon.png'},
+		    {src: 'footer-list.png'},
+		    {src: 'footer-map.png'},
+		    {src: 'hm.png'},
+		    {src: 'kookai.png'},
+		    {src: 'lecoq.png'},
+		    {src: 'lifewear.png'},
+		    {src: 'phone.png'},
+		    {src: 'portrait-login.png'},
+		    {src: 'sprite-icon.jpg'},
+		    {src: 'star-off.png'},
+		    {src: 'star-on.png'},
+		    {src: 'star.png'},
+		    {src: 'swatch.png'},
+		    {src: 'thomassabo.png'},
+		    {src: 'zara.png'},
+		    {src: 'shop/shop-1.jpg'},
+		    {src: 'shop/shop-2.jpg'},
+		    {src: 'shop/shop-3.jpg'},
+		    {src: 'shop/shop-4.jpg'},
+		    {src: 'shop/shop-5.jpg'},
+		    {src: 'shop/shop-6.jpg'},
+		    {src: 'shop/shop-7.jpg'},
+		    {src: 'shop/shop-8.jpg'},
+		    {src: 'shop/shop-9.jpg'},
+		];
+		preload.addEventListener('complete', function()
+		{
+			App.init();
+		});
+		preload.loadManifest(manifest);
+	},
+
 	init: function ()
 	{
 		var title = document.getElementById('title');
@@ -44,6 +90,7 @@ var App = {
 
 	shop: function()
 	{
+
 		var wrapper = document.getElementById('wrapper');
 		document.body.classList.add('select');
 		wrapper.style.display = 'block';
@@ -77,16 +124,17 @@ var App = {
 
 };
 
-document.addEventListener( "DOMContentLoaded", App.init.bind(this), false )
+document.addEventListener( "DOMContentLoaded", App.preload.bind(this), false )
 /*
 document.addEventListener('touchmove', function(e) {
 	e.preventDefault();
 }, false);
 */
-var socket = io.connect('http://192.168.1.9:3000');
+var socket = io.connect(IP+':3000');
 socket.on('get_data', function (data) {
-	console.log('Here');
 	document.querySelector('.selected').classList.add('move');
-	socket.emit('send_shop');
+	$('.move').one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+		socket.emit('send_shop');
+	});
 });
 
