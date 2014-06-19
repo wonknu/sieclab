@@ -51,6 +51,11 @@ var App = {
 		var title = document.getElementById('title');
 		var wrapperLife = document.getElementById('wrapper-life');
 
+		$('#refresh').on('touchend', function()
+		{
+			window.location.reload();
+		});
+
 		setTimeout(function()
 		{
 			title.classList.add('up');
@@ -80,7 +85,6 @@ var App = {
 		$('[data-personna]').on('click', function(e)
 		{
 			e.preventDefault();
-			console.log($(this).attr('data-personna'));
 			App.shop();
 			wrapperLife.style.display = 'none';
 			title.style.display = 'none';
@@ -98,6 +102,7 @@ var App = {
 			var el = $("<li>" + $(this).html() + "</li>");
 			var dataShop = $(this).attr('data-shop');
 			var dataImg = $(this).attr('data-img');
+			var dataPromo = $(this).attr('data-promo');
 			el.css({
 				left: e.originalEvent.touches[0].pageX + "px",
 				top: e.originalEvent.touches[0].pageY + "px"
@@ -117,6 +122,7 @@ var App = {
 				$('body').off('touchmove');
 				$('body').off('touchend');
 				$('.selected').append('<div class="item"><img src="' + dataImg + '" /></div>');
+				$('.img-promo').attr('src', dataPromo);
 				el.remove();
 			});
 		});

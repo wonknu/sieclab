@@ -17,6 +17,7 @@ html(class='no-js')
     script(src='/js/jquery.js')
  
   body
+    div#refresh
     h1#title.text-important
       img(src='/img/portrait-login.png')
       span bienvenue #{name}
@@ -164,24 +165,24 @@ html(class='no-js')
         div.col-sm-8
           p.text-important.choose-shop Sélectionner vos enseignes
           ul.row.list-shop
-            li.col-sm-4(data-shop='shop1', data-img="/img/kookai.png")
+            li.col-sm-4(data-shop='shop1', data-img="/img/kookai.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-1.jpg')
               img.star(src='/img/star.png')
-            li.col-sm-4(data-shop='shop2', data-img="/img/lecoq.png")
+            li.col-sm-4(data-shop='shop2', data-img="/img/lecoq.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-2.jpg')
-            li.col-sm-4(data-shop='shop3', data-img="/img/lifewear.png")
+            li.col-sm-4(data-shop='shop3', data-img="/img/lifewear.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-3.jpg')
-            li.col-sm-4(data-shop='shop4', data-img="/img/hm.png")
+            li.col-sm-4(data-shop='shop4', data-img="/img/hm.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-4.jpg')
-            li.col-sm-4(data-shop='shop5', data-img="/img/zara.png")
+            li.col-sm-4(data-shop='shop5', data-img="/img/zara.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-5.jpg')
-            li.col-sm-4(data-shop='shop6', data-img="/img/kookai.png")
+            li.col-sm-4(data-shop='shop6', data-img="/img/kookai.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-6.jpg')
-            li.col-sm-4(data-shop='shop7', data-img="/img/thomassabo.png")
+            li.col-sm-4(data-shop='shop7', data-img="/img/thomassabo.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-7.jpg')
-            li.col-sm-4(data-shop='shop8', data-img="/img/swatch.png")
+            li.col-sm-4(data-shop='shop8', data-img="/img/swatch.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-8.jpg')
-            li.col-sm-4(data-shop='shop9', data-img="/img/celio.png")
+            li.col-sm-4(data-shop='shop9', data-img="/img/celio.png", data-promo="/img/kookai.png")
               img(src='/img/shop/shop-9.jpg')
         div.col-sm-3.phone
           p.text-important.download Télécharger votre parcours
@@ -191,13 +192,9 @@ html(class='no-js')
               div.selected
             img(src='/img/phone.png')
       div.desc.row
-        div.col-sm-8
+        div.col-sm-12
+          img.img-promo(src="/img/test.jpg")
 
-          p.text-important.black 
-            img.promo.star(src='/img/star.png')
-            span Promotions du moment :
-        div.col-sm-3
-          p.text-important.black Conseils shopping :
 
       script(src='#{ip}:3000/socket.io/socket.io.js')
       script(src='/js/preloadjs.js')

@@ -13,6 +13,17 @@ body{
 	background: url("/img/bg-shop.jpg") no-repeat 0 0 transparent;
 	background-size:100% auto; 
 }
+
+#refresh{
+	background: url("/img/refresh.png") no-repeat 0 0 transparent;
+	position: absolute;
+	top:5px;
+	right:5px;
+	width: 40px;
+	height: 40px;
+	z-index: 5000;
+}
+
 body.select{
 	background: url("/img/bg.jpg") no-repeat 0 0 transparent;
 	background-size:100% auto; 
