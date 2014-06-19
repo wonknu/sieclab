@@ -4,7 +4,7 @@ $( document ).ready(function() {
 		$('#login-home').css('display', 'none');
 		$('#receive-shop-page').css('display', 'block');
 		$('#list-brands-page').css('display', 'block');
-	}, 3000)
+	}, 6000)
 
 	var socket = io.connect('http://192.168.1.9:3000');
 	socket.on('receive_shop', function (data) {
