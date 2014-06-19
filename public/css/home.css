@@ -145,3 +145,9 @@ html,body {
 .hide {
 	display: none;
 }
+.brands-map {
+	margin-top: -20px;
+}
+#list-map {
+	background: white;
+}
