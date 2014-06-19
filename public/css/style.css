@@ -22,11 +22,16 @@ body{
 	width: 40px;
 	height: 40px;
 	z-index: 5000;
+	opacity: 0.1;
 }
-
+.shop{
+	height: 530px;
+	overflow: hidden;
+}
 body.select{
 	background: url("/img/bg.jpg") no-repeat 0 0 transparent;
-	background-size:100% auto; 
+	background-size: 107% auto;
+	background-position: -40px -55px;
 }
 #title{
 	-webkit-transition: all 1s ease-in-out;
@@ -46,16 +51,20 @@ body.select{
 	top: 0;
 	margin: 0;
 	opacity:1;
+	padding-top: 55px;
 }
 #title img{
-	width: 100px;
+	width: 160px;
+	position: absolute;
+	left: 45px;
+	top: -5px;
 }
 #title.up{
-	-moz-transform: translate3d(0, 0, 0);
-	-webkit-transform: translate3d(0, 0, 0);
-	-o-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 5%, 0);
+	-webkit-transform: translate3d(0, 5%, 0);
+	-o-transform: translate3d(0, 5%, 0);
+	-ms-transform: translate3d(0, 5%, 0);
+	transform: translate3d(0, 5%, 0);
 }
 #title.fade{
 	opacity:0;
@@ -63,18 +72,30 @@ body.select{
 
 /* wrapper */
 #wrapper-life ul{
-	height: 665px;
+	height: 555px;
 	overflow: scroll;
-	-webkit-overflow-scrolling: touch
+	-webkit-overflow-scrolling: touch;
+	padding: 0 30px;
 }
 #wrapper-life ul,
 #wrapper-life ,
 #wrapper{
 	display:none;
 }
+#wrapper{
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	opacity: 1;
+}
+#wrapper.remove{
+	opacity: 0;
+}
 
 #wrapper-life{
-	margin-top:10%;
+	margin-top:20%;
 }
 
 #wrapper-life li{
@@ -125,6 +146,9 @@ li.draggable{
 	margin-top: -76px;
 	z-index: 1000;
 }
+li.draggable img{
+	width: 212px;
+}
 li.draggable .star{
 	right:3px;
 }
@@ -142,9 +166,21 @@ body.select .text-important{
 	text-shadow: 1px 1px 1px #000;
 }
 
+.desc img{
+	margin-top:30px;
+	width: 752px;
+}
+.desc .text-important{
+	margin-top: 50px;
+	padding-right: 20px;
+}
+
 /* phone */
 .phone{
-	padding-left: 50px;
+	padding-left: 100px;
+}
+.phone p{
+	width: 200px;
 }
 .phone-wrapper{
 	position: relative;
@@ -264,4 +300,11 @@ body.select .text-important{
 }
 #wrapper-life .bleu span{
 	background-position: -130px 50%;
+}
+#plan{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display:none;
 }
