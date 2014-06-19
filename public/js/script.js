@@ -10,25 +10,25 @@ var App = {
 		    {src: 'bg-phone.png'},
 		    {src: 'bg-shop.jpg'},
 		    {src: 'bg.jpg'},
-		    {src: 'celio.png'},
+		    {src: 'Scieclab_GUI_Phone_List_01.jpg'},
 		    {src: 'check-in-no.png'},
 		    {src: 'check-in-yes.png'},
 		    {src: 'clock-icon.png'},
 		    {src: 'footer-list.png'},
 		    {src: 'footer-map.png'},
-		    {src: 'hm.png'},
-		    {src: 'kookai.png'},
-		    {src: 'lecoq.png'},
-		    {src: 'lifewear.png'},
+		    {src: 'Scieclab_GUI_Phone_List_02.jpg'},
+		    {src: 'Scieclab_GUI_Phone_List_03.jpg'},
+		    {src: 'Scieclab_GUI_Phone_List_04.jpg'},
+		    {src: 'Scieclab_GUI_Phone_List_05.jpg'},
 		    {src: 'phone.png'},
 		    {src: 'portrait-login.png'},
 		    {src: 'sprite-icon.jpg'},
 		    {src: 'star-off.png'},
 		    {src: 'star-on.png'},
 		    {src: 'star.png'},
-		    {src: 'swatch.png'},
-		    {src: 'thomassabo.png'},
-		    {src: 'zara.png'},
+		    {src: 'Scieclab_GUI_Phone_List_06.jpg'},
+		    {src: 'Scieclab_GUI_Phone_List_07.jpg'},
+		    {src: 'Scieclab_GUI_Phone_List_08.jpg'},
 		    {src: 'shop/shop-1.jpg'},
 		    {src: 'shop/shop-2.jpg'},
 		    {src: 'shop/shop-3.jpg'},
@@ -38,6 +38,9 @@ var App = {
 		    {src: 'shop/shop-7.jpg'},
 		    {src: 'shop/shop-8.jpg'},
 		    {src: 'shop/shop-9.jpg'},
+		    {src: 'refresh.png'},
+		    {src: 'Scieclab_GUI_Screen_Plan.png'},
+		    {src: 'Scieclab_GUI_Phone_Plan.png'},
 		];
 		preload.addEventListener('complete', function()
 		{
@@ -64,7 +67,7 @@ var App = {
 
 			setTimeout(function()
 			{
-				title.querySelector('span').innerHTML = "Sélectionnez votre instant de vie";
+				title.querySelector('span').innerHTML = "Que voulez-vous faire ?";
 				title.classList.remove('fade');
 				setTimeout(function()
 				{
@@ -131,16 +134,21 @@ var App = {
 };
 
 document.addEventListener( "DOMContentLoaded", App.preload.bind(this), false )
-/*
-document.addEventListener('touchmove', function(e) {
-	e.preventDefault();
-}, false);
-*/
+
 var socket = io.connect(IP+':3000');
 socket.on('get_data', function (data) {
 	document.querySelector('.selected').classList.add('move');
 	$('.move').one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
 		socket.emit('send_shop');
+		setTimeout(function()
+		{
+			document.getElementById('wrapper').classList.add('remove');
+			setTimeout(function()
+			{
+				document.getElementById('plan').style.display = 'block';
+				document.body.classList.remove('select');
+			}, 1000);
+		}, 1000);
 	});
 });
 
