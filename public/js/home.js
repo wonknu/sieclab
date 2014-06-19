@@ -1,9 +1,8 @@
 $( document ).ready(function() {
 
-
 	var socket = io.connect('http://192.168.1.9:3000');
 	socket.on('receive_shop', function (data) {
-	    console.log('animation');
+	    $('#list-brands-page').addClass('move');
 	});
 	$('.btn-data').on('touchend', function() {
 	    socket.emit('btn-data');
@@ -41,23 +40,5 @@ $( document ).ready(function() {
   		}, 1000);
   	})
   	});
-
-  	/*$(".brands-promo-img").on('touchend', function() {
-  		$(".promo-text").fadeOut(2000, function() {
-  			$(".check-in-no").css('display', 'block');
-  		});
-  		setTimeout(function() {
-  			$(".check-in-no").on('touchend', function() {
-  				$('.check-in-no').attr('src', '/img/check-in-yes.png');
-  				$('.check-in-no').fadeOut(3000, function() {
-  					$('.final-promo-img').css('display', 'block');
-  					$('.clock-icon').css('display', 'block');
-  					$('.final-promo-text').css('display', 'inline-block');
-  					$('.brands-promo-img').addClass('complete');
-  					$('.check-in-text').addClass('complete');
-  				});	
-  			})
-  		}, 1000);
-  	})*/
 });
 
